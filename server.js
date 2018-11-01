@@ -4,9 +4,6 @@ const koaParser = require('koa-bodyparser');
 const app = new Koa();
 
 app.use(koaParser());
-app.use(async ctx => {
-  ctx.body = ctx.request.body;
-});
 app.use(koaJson({
   pretty: false
 }));
