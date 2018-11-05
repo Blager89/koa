@@ -7,6 +7,7 @@ const router = new Router({
 const heandler = {
   async index(ctx) {
     const allProducts = await knex('products').select();
+    console.log(123);
     ctx.body = allProducts;
 
 
