@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Koa = require('koa');
 const koaJson = require('koa-json');
 const koaParser = require('koa-bodyparser');
@@ -13,7 +14,7 @@ app.use(koaJson({
 
 require('./routes')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT);
 module.exports = app;
 
 

@@ -1,15 +1,13 @@
 const Router = require('koa-router');
-const knex = require('./../knexfile');
-const router = new Router({
-  prefix: '/api'
-});
+const {knex} = require('../config/database');
+const router = new Router();
+
 
 const heandler = {
   async index(ctx) {
-    const allProducts = await knex('products').select();
-    ctx.body = allProducts;
-
-
+    const x = await knex('products')
+      .select();
+    ctx.body = x;
   },
 
   async postTest(ctx) {
