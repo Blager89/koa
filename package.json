@@ -12,6 +12,7 @@
   "dependencies": {
     "bookshelf": "^0.13.3",
     "dotenv": "^6.1.0",
+    "faker": "^4.1.0",
     "knex": "^0.15.2",
     "koa": "^2.6.1",
     "koa-bodyparser": "^4.2.1",

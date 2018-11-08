@@ -1,6 +1,6 @@
 
-exports.up = function(knex, Promise) {
-  return knex.schema.createTable('products', t =>{
+exports.up = async knex => {
+  await knex.schema.createTable('products', t =>{
     t.increments('id').unsigned().primary();
     t.string('name').notNull();
     t.integer('media').unsigned().notNull();
@@ -13,6 +13,6 @@ exports.up = function(knex, Promise) {
   })
 };
 
-exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('products');
+exports.down = async knex => {
+  await knex.schema.dropTable('products');
 };

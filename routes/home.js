@@ -1,13 +1,13 @@
 const Router = require('koa-router');
 const {knex} = require('../config/database');
+const { Products } = require('../models');
 const router = new Router();
 
 
 const heandler = {
   async index(ctx) {
-    const x = await knex('products')
-      .select();
-    ctx.body = x;
+    console.log(Products.where({id:1}).count());
+    ctx.body = '';
   },
 
   async postTest(ctx) {

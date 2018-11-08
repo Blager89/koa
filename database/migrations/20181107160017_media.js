@@ -1,6 +1,6 @@
 
 exports.up = async knex=> {
-  return knex.schema.createTable('media', t => {
+  await knex.schema.createTable('media', t => {
     t.increments();
     t.integer('product_id')
       .index()
@@ -22,5 +22,5 @@ exports.up = async knex=> {
 };
 
 exports.down = async knex =>{
-  return knex.dropTable('media');
+  await knex.dropTable('media');
 };
