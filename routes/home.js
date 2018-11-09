@@ -11,11 +11,11 @@ const heandler = {
     ctx.body = products;
   },
 
-  async postTest(ctx) {
-    ctx.body = ctx.request.body;
+  async singleProduct(ctx) {
+    ctx.body = 123;
   }
 };
 
 router.get('/', heandler.index);
-router.post('/', heandler.postTest);
+router.get('/qwe', heandler.singleProduct);
 module.exports = router.routes();
