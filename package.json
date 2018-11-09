@@ -12,6 +12,8 @@
   "dependencies": {
     "bookshelf": "^0.13.3",
     "dotenv": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "faker": "^4.1.0",
     "knex": "^0.15.2",
     "koa": "^2.6.1",
@@ -19,5 +21,8 @@
     "koa-json": "^2.0.2",
     "koa-router": "^7.4.0",
     "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0"
   }
 }
