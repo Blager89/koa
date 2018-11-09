@@ -4,7 +4,6 @@ const koaJson = require('koa-json');
 const koaParser = require('koa-bodyparser');
 const logger = require('./libs/logger')(module);
 
-
 const app = new Koa();
 
 app.use(koaParser());

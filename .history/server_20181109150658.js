@@ -3,6 +3,7 @@ const Koa = require('koa');
 const koaJson = require('koa-json');
 const koaParser = require('koa-bodyparser');
 const logger = require('./libs/logger')(module);
+const logger = require('./libs/logger').dblogger(module);
 
 
 const app = new Koa();

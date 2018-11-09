@@ -32,9 +32,4 @@ bookshelf.plugin('virtuals');
 bookshelf.plugin('visibility');
 bookshelf.plugin('pagination');
 
-if (process.env.LOG_ENABLED === 'true') {
-  knex.on('query', knexLogger.query);
-  knex.on('query-response', knexLogger.query_response);
-}
-
 module.exports = { bookshelf, knex, knexConnectionObject };

@@ -1,6 +1,5 @@
 const knexInstance = require('knex');
 const bookshelfInstance = require('bookshelf');
-const knexLogger = require('./../libs/knexLoggerQueries');
 require('dotenv').config();
 
 const knexConnectionObject = {
@@ -10,7 +9,7 @@ const knexConnectionObject = {
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
   },
   migrations: {
     tableName: 'knex_migrations',
@@ -31,10 +30,5 @@ bookshelf.plugin('registry');
 bookshelf.plugin('virtuals');
 bookshelf.plugin('visibility');
 bookshelf.plugin('pagination');
-
-if (process.env.LOG_ENABLED === 'true') {
-  knex.on('query', knexLogger.query);
-  knex.on('query-response', knexLogger.query_response);
-}
 
 module.exports = { bookshelf, knex, knexConnectionObject };

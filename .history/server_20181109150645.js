@@ -4,7 +4,6 @@ const koaJson = require('koa-json');
 const koaParser = require('koa-bodyparser');
 const logger = require('./libs/logger')(module);
 
-
 const app = new Koa();
 
 app.use(koaParser());
@@ -15,6 +14,14 @@ app.use(koaJson({
 
 require('./routes')(app);
 
+const options = {
+  from: new Date() - 24 * 60 * 60 * 1000,
+  until: new Date(),
+  limit: 10,
+  start: 0,
+  order: 'desc',
+  fields: ['message']
+};
 
 if (!module.parent) {
   app.listen(process.env.PORT, () => {
