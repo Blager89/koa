@@ -9,14 +9,10 @@ const heandler = {
   async index(ctx) {
     const products = await knex('products')
       .select();
-    ctx.body = products;
-  },
 
-  async singleProduct(ctx) {
-    ctx.body = 123;
+    ctx.body = products;
   }
 };
 
-router.get('/', authenticated, heandler.index);
-router.get('/qwe', heandler.singleProduct);
+router.get('/qwe', heandler.index);
 module.exports = router.routes();

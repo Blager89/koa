@@ -1,5 +1,9 @@
 const homeRouter = require('./home');
+const { signupRouter } = require('./auth');
 
 module.exports = app => {
-app.use(homeRouter)
+  // error heandler
+
+  app.use(homeRouter);
+  app.use(signupRouter);
 };
