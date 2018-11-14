@@ -1,5 +1,5 @@
 const Router = require('koa-router');
-const { validate } = require('../../libs');
+const { validate, JWT } = require('../../libs');
 const { User } = require('../../models');
 
 
@@ -22,8 +22,12 @@ const heandler = {
       email,
       password
     }).save();
+    const user = await User.where({ email }).fetch();
 
-    ctx.body = '';
+    ctx.body = {
+      token: `Bearer ${JWT.signUser(user)}`,
+      id: user.get('id')
+    };
   }
 };
 
