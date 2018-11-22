@@ -1,16 +1,13 @@
 const Router = require('koa-router');
-const { knex } = require('../config/database');
-const { authenticated } = require('../middlewares');
+const { Products } = require('../models');
 
 const router = new Router();
 
 
 const heandler = {
   async index(ctx) {
-    const products = await knex('products')
-      .select();
-
-    ctx.body = products;
+    const prod = await Products.fetchAll({ withRelated: ['categories', 'media'] });
+    ctx.body = prod;
   }
 };
 

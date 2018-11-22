@@ -1,14 +1,17 @@
 const Router = require('koa-router');
 const { authenticated } = require('../../middlewares');
+const { validate } = require('../../libs');
 
 const router = new Router({ prefix: '/api' });
 
+const rule = {
+  email: 'required|email',
+  password: 'required|min:6'
+};
 
 const heandler = {
   async signin(ctx) {
-    ctx.body = '123';
-    const u = ctx.state.user_id;
-    console.log(u);
+    await validate(ctx.request.body, rule);
   }
 };
 

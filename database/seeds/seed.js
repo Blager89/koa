@@ -1,40 +1,41 @@
 const faker = require('faker');
+
 const categories = [
   {
     id: 1,
-    name: 'Pop',
+    name: 'Pop'
   },
   {
     id: 2,
-    name: 'Rap',
+    name: 'Rap'
   },
   {
     id: 3,
-    name: 'Disco',
+    name: 'Disco'
   },
   {
     id: 4,
-    name: 'Rock',
+    name: 'Rock'
   }
 ];
 const products = [
   {
     id: 1,
     name: 'rowValue1',
-    media: 1,
+    media_id: 1,
     price: '99',
     author: 'Em',
-    category: '1',
+    category_id: '1',
     createdAt: new Date(),
     updatedAt: new Date()
   },
   {
     id: 2,
     name: 'rowValue2',
-    media: 1,
+    media_id: 2,
     price: '99',
     author: 'Az',
-    category: '2',
+    category_id: '2',
     createdAt: new Date(),
     updatedAt: new Date()
   }
@@ -42,11 +43,11 @@ const products = [
 const roles = [
   {
     id: 1,
-    name: 'admin',
+    name: 'admin'
   },
   {
     id: 2,
-    name: 'user',
+    name: 'user'
   }
 ];
 const media = [
@@ -57,7 +58,7 @@ const media = [
     bucket: 'resources/images',
     type: 'cover',
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 2,
@@ -66,7 +67,7 @@ const media = [
     bucket: 'resources/tracks',
     type: 'track',
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 3,
@@ -75,7 +76,7 @@ const media = [
     bucket: 'resources/images',
     type: 'cover',
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   }, {
     id: 4,
     product_id: 2,
@@ -83,8 +84,8 @@ const media = [
     bucket: 'resources/tracks',
     type: 'track',
     created_at: new Date(),
-    updated_at: new Date(),
-  },
+    updated_at: new Date()
+  }
 ];
 const userRoles = [
   {
@@ -114,7 +115,7 @@ const userRoles = [
   {
     user_id: 6,
     role_id: 1
-  },
+  }
 
 ];
 const users = [
@@ -124,7 +125,7 @@ const users = [
     email: 'admin@gmail.com',
     password: 123123,
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 5,
@@ -132,7 +133,7 @@ const users = [
     email: faker.internet.email(),
     password: 1,
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 1,
@@ -140,7 +141,7 @@ const users = [
     email: faker.internet.email(),
     password: 1,
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 2,
@@ -148,7 +149,7 @@ const users = [
     email: faker.internet.email(),
     password: 1,
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 3,
@@ -156,7 +157,7 @@ const users = [
     email: faker.internet.email(),
     password: 1,
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: 4,
@@ -164,7 +165,7 @@ const users = [
     email: faker.internet.email(),
     password: 1,
     created_at: new Date(),
-    updated_at: new Date(),
+    updated_at: new Date()
   }
 ];
 exports.seed = async knex => {

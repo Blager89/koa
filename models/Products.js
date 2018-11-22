@@ -1,9 +1,14 @@
 const { bookshelf } = require('./../config/database');
 
-
 const Products = bookshelf.Model.extend(
   {
-    tableName: 'Products'
+    tableName: 'products',
+    categories() {
+      return this.belongsTo('Categories');
+    },
+    media() {
+      return this.hasMany('Media');
+    }
   }
 );
 
